@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Poornesh – Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=Saira+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eceef1; --card:#ffffff; --ink:#14171c; --muted:#4e5865; --red:#c8261a; --line:#cdd2da;
+  --head:"Saira Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Saira Semi Condensed","Segoe UI",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#14181f;--card:#1d222b;--ink:#f3f1ec;--muted:#a5afbd;--red:#ff4b3a;--line:#2c333f}
+}
+:root[data-theme="dark"]{--bg:#14181f;--card:#1d222b;--ink:#f3f1ec;--muted:#a5afbd;--red:#ff4b3a;--line:#2c333f}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid #ffb020;outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* hero: instrument cluster, always dark */
+.cluster{background-color:#12161c;background-image:linear-gradient(45deg,#1a1f27 25%,transparent 25% 75%,#1a1f27 75%),linear-gradient(45deg,#1a1f27 25%,transparent 25% 75%,#1a1f27 75%);background-size:8px 8px;background-position:0 0,4px 4px;color:#f3f1ec;padding:24px 0 50px;position:relative}
+.cluster::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:linear-gradient(#e63b2e 0 6px,#12161c 6px 8px,#f3f1ec 8px)}
+.gears{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.gears a{display:flex;align-items:center;gap:8px;text-decoration:none;color:#c3ccd8;font-weight:500;padding:4px 14px 4px 4px;border-radius:99px;border:1px solid #2f3744;background:#171c24}
+.gears a:hover{border-color:#ffb020;color:#fff}
+.gears b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#2a313c;font:800 15px var(--head);color:#ffb020}
+.top{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+h1{font:800 clamp(3.4rem,11vw,7.6rem)/.88 var(--head);text-transform:uppercase;margin:0 0 18px;transform:skewX(-8deg);transform-origin:left bottom}
+.tag{font:600 clamp(1.3rem,3vw,1.9rem)/1.15 var(--head);color:#ffb020;margin:0 0 12px}
+.blurb{color:#b7c1ce;max-width:34em;margin:0 0 22px}
+.lights{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 18px;font-size:.95rem;font-weight:500}
+.lights li{display:flex;align-items:center;gap:8px}
+.lights i{width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:0 0 10px 2px var(--c)}
+.gauge{width:100%;max-width:430px;justify-self:center;display:block}
+.face{fill:#0d1116;stroke:#2f3744;stroke-width:6}
+.tk{stroke:#7e8997;stroke-width:2}.tk.M{stroke:#e6ebf2;stroke-width:3.5}.tk.r{stroke:#ff4b3a}
+.nm{fill:#cfd6e0;font:600 24px var(--head);text-anchor:middle}
+.red{fill:none;stroke:#ff4b3a;stroke-width:7}
+#needle{transform-box:view-box;transform-origin:200px 200px;transform:rotate(378deg);filter:drop-shadow(0 0 6px rgba(255,75,58,.8))}
+#num{fill:#f3f1ec;font:800 86px var(--head);text-anchor:middle;font-variant-numeric:tabular-nums}
+.unit{fill:#ffb020;font:600 24px var(--head);text-anchor:middle}
+.cap{fill:#9aa6b6;font:500 15px var(--body);text-anchor:middle}
+
+h2{font:800 clamp(2.2rem,5vw,3.2rem)/1 var(--head);text-transform:uppercase;margin:0 0 28px}
+h2::before{content:"";display:block;width:76px;height:8px;margin-bottom:12px;background:linear-gradient(90deg,var(--red) 0 58%,transparent 58% 68%,var(--ink) 68%)}
+section{padding:64px 0 6px}
+
+.job{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--red);padding:22px 26px;margin-bottom:18px}
+.job-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.job h3{font:800 1.7rem/1.1 var(--head);margin:0}
+.when{font:600 1rem var(--head);background:var(--ink);color:var(--bg);padding:2px 12px}
+.org{margin:4px 0 10px;color:var(--muted);font-weight:500}
+.job ul{margin:0;padding-left:18px;max-width:66ch}
+.job li{margin-bottom:5px}
+
+.cars{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.car{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+.car:first-child{grid-column:1/-1}
+.car-body{padding:24px 24px 18px;flex:1}
+.car h3{font:800 1.8rem/1.05 var(--head);margin:0 0 8px}
+.car p{margin:0 0 8px;max-width:62ch}
+.ribbon{display:inline-block;background:var(--red);color:#fff;font:600 .95rem var(--head);padding:2px 12px;margin-bottom:10px}
+.spec{display:flex;flex-wrap:wrap;margin:0;border-top:1px solid var(--line);background:rgba(127,135,150,.08)}
+.spec div{flex:1 1 130px;padding:10px 20px;border-right:1px solid var(--line)}
+.spec dt{font-size:.82rem;color:var(--muted)}
+.spec dd{margin:0;font:800 1.15rem var(--head)}
+
+.sheet{margin:0;background:var(--card);border:1px solid var(--line)}
+.sheet div{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:12px 24px;border-bottom:1px solid var(--line)}
+.sheet div:last-child{border-bottom:none}
+.sheet dt{font:800 1.2rem var(--head);color:var(--red)}
+.sheet dd{margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.two h3{font:800 1.5rem/1.1 var(--head);margin:0 0 4px}
+.two p{margin:0 0 10px;color:var(--muted)}
+.two ul{margin:0;padding-left:18px}
+.two li{margin-bottom:6px}
+
+.go{display:flex;align-items:center;gap:34px;flex-wrap:wrap;padding-bottom:76px}
+.start{display:grid;place-items:center;width:150px;height:150px;border-radius:50%;background:radial-gradient(#ff5a47,#b3180d);border:8px solid #12161c;box-shadow:0 0 0 4px var(--red);color:#fff;text-decoration:none;font:800 1.7rem/1 var(--head);text-transform:uppercase;text-align:center;transition:transform .15s}
+.start:active{transform:scale(.94)}
+.go p{font:800 clamp(1.8rem,5vw,3rem)/1.05 var(--head);text-transform:uppercase;margin:0 0 12px;max-width:15em}
+.links{display:flex;gap:20px;flex-wrap:wrap;font-weight:600}
+footer{border-top:1px solid var(--line);padding:20px 0 34px;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.top,.two{grid-template-columns:1fr}.sheet div{grid-template-columns:1fr;gap:2px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="cluster">
+  <div class="wrap">
+    <nav class="gears" aria-label="Sections">
+      <a href="#experience"><b>1</b>Experience</a>
+      <a href="#projects"><b>2</b>Projects</a>
+      <a href="#skills"><b>3</b>Skills</a>
+      <a href="#education"><b>4</b>Education</a>
+      <a href="#contact"><b>5</b>Contact</a>
+    </nav>
+    <div class="top">
+      <div>
+        <h1>Poornesh</h1>
+        <p class="tag">Software engineer. Built for real-world AI.</p>
+        <p class="blurb">Python, Java, and machine learning. From a YOLO parking system with a published patent to deepfake detection, I build software that sees, learns, and gets used. Based in Bangalore.</p>
+        <ul class="lights">
+          <li><i style="--c:#35d07f"></i>Patent published</li>
+          <li><i style="--c:#ffb020"></i>KSCST sponsored</li>
+          <li><i style="--c:#4da3ff"></i>CGPA 7.98</li>
+          <li><i style="--c:#ff4b3a"></i>Two roles in 2026</li>
+        </ul>
+      </div>
+      <svg class="gauge" viewBox="0 0 400 400" role="img" aria-label="Gauge reading 90 percent: fake news detection accuracy">
+        <circle class="face" cx="200" cy="200" r="190"/>
+        <g id="ticks"></g>
+        <text id="num" x="200" y="248">90</text>
+        <text class="unit" x="200" y="276">%</text>
+        <text class="cap" x="200" y="306">Fake news detection accuracy</text>
+        <g id="needle"><line x1="168" y1="200" x2="360" y2="200" stroke="#ff4b3a" stroke-width="4" stroke-linecap="round"/><circle cx="200" cy="200" r="13" fill="#2a313c" stroke="#ff4b3a" stroke-width="3"/></g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="experience">
+    <h2>Experience</h2>
+    <article class="job">
+      <div class="job-head"><h3>Full Stack Development Trainee</h3><span class="when">March 2026 – Present</span></div>
+      <p class="org">KodNest Technologies Pvt. Ltd.</p>
+      <ul>
+        <li>Building responsive front-end interfaces with HTML, CSS, and JavaScript.</li>
+        <li>Developing server-side applications and REST APIs using Java.</li>
+        <li>Designing and querying relational databases using SQL.</li>
+        <li>Using Git and GitHub while applying concepts through assignments and mini-projects.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="job-head"><h3>Data Science Intern</h3><span class="when">Feb 2026 – May 2026</span></div>
+      <p class="org">Prinston Smart Engineers</p>
+      <ul>
+        <li>Built machine learning models in Python using Pandas, NumPy, and Scikit-learn for prediction tasks.</li>
+        <li>Evaluated model performance and tuned models to improve accuracy.</li>
+        <li>Cleaned, preprocessed, and transformed datasets in ETL and data pipeline workflows.</li>
+        <li>Wrote SQL queries for data extraction and analysis.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="cars">
+      <article class="car">
+        <div class="car-body">
+          <span class="ribbon">Patent published · KSCST-sponsored</span>
+          <h3>Smart Parking System</h3>
+          <p>Uses YOLO object detection on live camera input to show real-time parking slot availability on a website.</p>
+          <p>Supports reservations and navigation, cancels unused reservations automatically, and detects obstructions to keep usage fair.</p>
+        </div>
+        <dl class="spec"><div><dt>Detector</dt><dd>YOLO</dd></div><div><dt>Input</dt><dd>Live camera</dd></div><div><dt>Output</dt><dd>Slot availability</dd></div><div><dt>Extras</dt><dd>Reservations</dd></div></dl>
+      </article>
+      <article class="car">
+        <div class="car-body"><h3>Deepfake Video Detection</h3><p>Analyses video frames to catch manipulated content and verify authenticity, with a data extraction and transformation workflow.</p></div>
+        <dl class="spec"><div><dt>Models</dt><dd>Inception ResNet + LSTM</dd></div><div><dt>Input</dt><dd>Video frames</dd></div></dl>
+      </article>
+      <article class="car">
+        <div class="car-body"><h3>Fake News Detection</h3><p>Classifies news articles as real or fake, with a data cleaning and preprocessing pipeline.</p></div>
+        <dl class="spec"><div><dt>Vectorizer</dt><dd>TF-IDF</dd></div><div><dt>Classifier</dt><dd>Passive Aggressive</dd></div><div><dt>Accuracy</dt><dd>90%</dd></div></dl>
+      </article>
+      <article class="car">
+        <div class="car-body"><h3>IoT Water Tank Management</h3><p>Monitors water levels in real time and automates pump operation for residential, agricultural, and industrial tanks, reducing overflow and wastage.</p></div>
+        <dl class="spec"><div><dt>Sensing</dt><dd>Water level</dd></div><div><dt>Control</dt><dd>Auto + manual override</dd></div></dl>
+      </article>
+      <article class="car">
+        <div class="car-body"><h3>Library Management System</h3><p>Manages book records, user details, and issue and return tracking through a user-friendly interface.</p></div>
+        <dl class="spec"><div><dt>Features</dt><dd>Search, add, delete, update</dd></div></dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="sheet">
+      <div><dt>Languages</dt><dd>Python, Java</dd></div>
+      <div><dt>Database</dt><dd>SQL</dd></div>
+      <div><dt>Web</dt><dd>HTML, CSS, React</dd></div>
+      <div><dt>Data skills</dt><dd>Data cleaning, data processing, ETL, data analysis</dd></div>
+      <div><dt>Machine learning</dt><dd>Classification, model evaluation</dd></div>
+      <div><dt>Tools</dt><dd>Pandas, NumPy, Scikit-learn, Git, GitHub, Jupyter Notebook, VS Code, Canva, Excel</dd></div>
+    </dl>
+  </section>
+
+  <section id="education">
+    <h2>Education and wins</h2>
+    <div class="two">
+      <div>
+        <h3>B.E. in Computer Science and Business Systems</h3>
+        <p>Canara Engineering College, Mangalore · 2022 – 2026 · CGPA 7.98</p>
+        <p>Pre-University (PCMC), Sri Venkatramana PU College, Kundapura: 73%<br>Schooling, Sandeepan English Medium School, Nagoor: 91.52%</p>
+      </div>
+      <ul>
+        <li>Patent published for the Smart Parking System.</li>
+        <li>KSCST state-level project exhibition certificate for Smart Parking.</li>
+        <li>HTML and CSS training certificate; Data Science internship certificate.</li>
+        <li>Second place, district-level karate competition.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="go">
+    <a class="start" href="mailto:poornesh1703@gmail.com" aria-label="Email Poornesh">Start</a>
+    <div>
+      <p>Building something practical? Let’s get moving.</p>
+      <div class="links">
+        <a href="mailto:poornesh1703@gmail.com">poornesh1703@gmail.com</a>
+        <a href="https://github.com/poornesh1703">GitHub</a>
+        <a href="https://www.linkedin.com/in/poornesh-jp-628b04275">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Poornesh</div></footer>
+
+<script>
+(function(){
+  var c=200,P=function(r,a){return [c+r*Math.cos(a*Math.PI/180),c+r*Math.sin(a*Math.PI/180)]};
+  var h='';
+  for(var i=0;i<=50;i++){
+    var a=135+5.4*i,M=i%5===0,p1=P(M?148:156,a),p2=P(168,a);
+    h+='<line x1="'+p1[0]+'" y1="'+p1[1]+'" x2="'+p2[0]+'" y2="'+p2[1]+'" class="tk'+(M?' M':'')+(i>=45?' r':'')+'"/>';
+    if(M){var t=P(124,a);h+='<text x="'+t[0]+'" y="'+(t[1]+8)+'" class="nm">'+(i/5)+'</text>'}
+  }
+  var s=P(178,135+27*9),e=P(178,405);
+  h+='<path class="red" d="M'+s[0]+' '+s[1]+'A178 178 0 0 1 '+e[0]+' '+e[1]+'"/>';
+  document.getElementById('ticks').innerHTML=h;
+  var n=document.getElementById('needle'),num=document.getElementById('num');
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  n.style.transition='none';n.style.transform='rotate(135deg)';num.textContent='0';
+  n.getBoundingClientRect();
+  setTimeout(function(){
+    n.style.transition='transform 2.4s cubic-bezier(.22,.8,.25,1)';
+    n.style.transform='rotate(378deg)';
+    var st=performance.now();
+    (function f(now){
+      var p=Math.min((now-st)/2400,1),k=1-Math.pow(1-p,3.2);
+      num.textContent=Math.round(90*k);
+      if(p<1)requestAnimationFrame(f);
+    })(st);
+  },400);
+})();
+</script>
+</body>
+</html>
